@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Echo X Store</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px;
+      background: #111;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #00eaff;
+      box-shadow: 0 2px 5px #00000055;
+    }
+
+    .container {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .btn {
+      padding: 15px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      background: #00eaff;
+      color: #000;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px #00000055;
+    }
+
+    .btn:hover {
+      background: #00bcd4;
+    }
+
+    .service-page {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    .back-btn {
+      background: #444;
+      color: #fff;
+    }
+
+    a {
+      color: #00eaff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (max-width: 500px) {
+      header {
+        font-size: 1.5rem;
+      }
+      .btn {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>𝐄𝐜𝐡𝐨 𝐗 𝐒𝐭𝐨𝐫𝐞</header>
+
+  <div class="container" id="main">
+    <button class="btn" onclick="openService('youtube')">YouTube Premium</button>
+    <button class="btn" onclick="openService('telegram')">Telegram Premium</button>
+  </div>
+
+  <div class="service-page" id="youtube">
+    <h2>YouTube Premium</h2>
+    <ul>
+      <li>মেয়াদ: ১ মাস</li>
+      <li>No Ads</li>
+      <li>1080p Full HD Download</li>
+      <li>Background Play + Mini Screen</li>
+      <li>Background Audio Play</li>
+      <li>YouTube Music Free</li>
+      <li>All Video Download Possible</li>
+      <li>No Advance Payment</li>
+      <li>Only Gmail Needed</li>
+      <li><strong>Single Pack:</strong> ২০৳</li>
+      <li><strong>Family Pack:</strong> ৫০৳</li>
+    </ul>
+    <a href="https://t.me/NeoEchoo" target="_blank">DM @NeoEchoo</a>
+    <button class="btn back-btn" onclick="goBack()">← Back</button>
+  </div>
+
+  <div class="service-page" id="telegram">
+    <h2>Telegram Premium</h2>
+    <ul>
+      <li>1 month: 4.5$ (ID Access Needed)</li>
+      <li>3 months: 13.5$</li>
+      <li>6 months: 17.5$</li>
+      <li>12 months: 30.5$</li>
+    </ul>
+    <a href="https://t.me/NeoEchoo" target="_blank">DM @NeoEchoo</a>
+    <button class="btn back-btn" onclick="goBack()">← Back</button>
+  </div>
+
+  <script>
+    function openService(service) {
+      document.getElementById("main").style.display = "none";
+      document.getElementById(service).style.display = "flex";
+    }
+
+    function goBack() {
+      document.getElementById("main").style.display = "flex";
+      document.getElementById("youtube").style.display = "none";
+      document.getElementById("telegram").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
