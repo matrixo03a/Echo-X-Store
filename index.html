@@ -2,93 +2,183 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Echo X Store</title>
   <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+      color: #2c3e50;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      padding: 40px 20px;
     }
 
     header {
-      width: 100%;
-      padding: 20px;
-      background: #111;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #34495e;
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+      user-select: none;
+      text-transform: uppercase;
+      font-family: 'Poppins', sans-serif;
       text-align: center;
-      font-size: 1.8rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-      color: #00eaff;
-      box-shadow: 0 2px 5px #00000055;
+      width: 100%;
+      max-width: 480px;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 12px;
     }
 
+    /* Container */
     .container {
-      margin-top: 40px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      width: 90%;
-      max-width: 400px;
+      gap: 28px;
+      width: 100%;
+      max-width: 480px;
     }
 
+    /* Buttons - main services */
     .btn {
-      padding: 15px 20px;
+      background-color: #3498db;
+      color: white;
+      padding: 18px 28px;
+      font-size: 1.25rem;
+      font-weight: 600;
       border: none;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      background: #00eaff;
-      color: #000;
+      border-radius: 12px;
       cursor: pointer;
-      transition: 0.3s;
-      box-shadow: 0 4px 10px #00000055;
+      box-shadow: 0 8px 15px rgba(52, 152, 219, 0.3);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      text-align: center;
+      user-select: none;
+      letter-spacing: 0.5px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .btn:hover {
-      background: #00bcd4;
+      background-color: #2980b9;
+      box-shadow: 0 12px 20px rgba(41, 128, 185, 0.5);
     }
 
+    /* Service page card */
     .service-page {
       display: none;
-      flex-direction: column;
-      gap: 15px;
-      background: #1c1c1c;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 30px;
+      background-color: white;
+      padding: 30px 32px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+      color: #34495e;
+      width: 100%;
+      max-width: 480px;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
 
-    .back-btn {
-      background: #444;
-      color: #fff;
+    .service-page h2 {
+      margin-top: 0;
+      font-size: 2rem;
+      font-weight: 700;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+      margin-bottom: 24px;
+      user-select: none;
+      letter-spacing: 1px;
     }
 
+    .service-page ul {
+      padding-left: 20px;
+      margin-bottom: 28px;
+      color: #2c3e50;
+    }
+
+    .service-page ul li {
+      margin-bottom: 12px;
+    }
+
+    /* Link style */
     a {
-      color: #00eaff;
+      color: #2980b9;
+      font-weight: 600;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 1.1rem;
+      display: inline-block;
+      margin-bottom: 28px;
+      transition: color 0.3s ease;
+      user-select: text;
     }
 
-    @media (max-width: 500px) {
+    a:hover {
+      color: #1b4f72;
+      text-decoration: underline;
+    }
+
+    /* Back button */
+    .back-btn {
+      background-color: #95a5a6;
+      color: white;
+      padding: 14px 24px;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      width: auto;
+      box-shadow: 0 6px 12px rgba(149, 165, 166, 0.3);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      font-size: 1rem;
+      letter-spacing: 0.4px;
+    }
+
+    .back-btn:hover {
+      background-color: #7f8c8d;
+      box-shadow: 0 8px 18px rgba(127, 140, 141, 0.5);
+    }
+
+    /* Responsive */
+    @media (max-width: 520px) {
+      body {
+        padding: 30px 16px;
+      }
       header {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+        max-width: 100%;
       }
       .btn {
+        font-size: 1.1rem;
+        padding: 16px 20px;
+      }
+      .service-page {
+        padding: 24px 20px;
         font-size: 1rem;
+      }
+      .service-page h2 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+      }
+      a {
+        font-size: 1rem;
+      }
+      .back-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>𝐄𝐜𝐡𝐨 𝐗 𝐒𝐭𝐨𝐫𝐞</header>
+  <header>Echo X Store</header>
 
   <div class="container" id="main">
     <button class="btn" onclick="openService('youtube')">YouTube Premium</button>
@@ -110,8 +200,8 @@
       <li><strong>Single Pack:</strong> ২০৳</li>
       <li><strong>Family Pack:</strong> ৫০৳</li>
     </ul>
-    <a href="https://t.me/NeoEchoo" target="_blank">DM @NeoEchoo</a>
-    <button class="btn back-btn" onclick="goBack()">← Back</button>
+    <a href="https://t.me/NeoEchoo" target="_blank" rel="noopener noreferrer">DM @NeoEchoo</a>
+    <button class="back-btn" onclick="goBack()">← Back</button>
   </div>
 
   <div class="service-page" id="telegram">
@@ -122,20 +212,22 @@
       <li>6 months: 17.5$</li>
       <li>12 months: 30.5$</li>
     </ul>
-    <a href="https://t.me/NeoEchoo" target="_blank">DM @NeoEchoo</a>
-    <button class="btn back-btn" onclick="goBack()">← Back</button>
+    <a href="https://t.me/NeoEchoo" target="_blank" rel="noopener noreferrer">DM @NeoEchoo</a>
+    <button class="back-btn" onclick="goBack()">← Back</button>
   </div>
 
   <script>
     function openService(service) {
       document.getElementById("main").style.display = "none";
-      document.getElementById(service).style.display = "flex";
+      document.getElementById(service).style.display = "block";
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function goBack() {
       document.getElementById("main").style.display = "flex";
       document.getElementById("youtube").style.display = "none";
       document.getElementById("telegram").style.display = "none";
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 
