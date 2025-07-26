@@ -6,9 +6,7 @@
   <title>Echo X Store</title>
   <style>
     /* Reset and base */
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       padding: 0;
@@ -38,7 +36,6 @@
       padding-bottom: 12px;
     }
 
-    /* Container */
     .container {
       display: flex;
       flex-direction: column;
@@ -47,7 +44,6 @@
       max-width: 480px;
     }
 
-    /* Buttons - main services */
     .btn {
       background-color: #3498db;
       color: white;
@@ -63,7 +59,6 @@
       text-align: center;
       user-select: none;
       letter-spacing: 0.5px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .btn:hover {
@@ -71,7 +66,6 @@
       box-shadow: 0 12px 20px rgba(41, 128, 185, 0.5);
     }
 
-    /* Service page card */
     .service-page {
       display: none;
       background-color: white;
@@ -106,7 +100,6 @@
       margin-bottom: 12px;
     }
 
-    /* Link style */
     a {
       color: #2980b9;
       font-weight: 600;
@@ -123,7 +116,6 @@
       text-decoration: underline;
     }
 
-    /* Back button */
     .back-btn {
       background-color: #95a5a6;
       color: white;
@@ -145,34 +137,14 @@
       box-shadow: 0 8px 18px rgba(127, 140, 141, 0.5);
     }
 
-    /* Responsive */
     @media (max-width: 520px) {
-      body {
-        padding: 30px 16px;
-      }
-      header {
-        font-size: 1.8rem;
-        max-width: 100%;
-      }
-      .btn {
-        font-size: 1.1rem;
-        padding: 16px 20px;
-      }
-      .service-page {
-        padding: 24px 20px;
-        font-size: 1rem;
-      }
-      .service-page h2 {
-        font-size: 1.6rem;
-        margin-bottom: 20px;
-      }
-      a {
-        font-size: 1rem;
-      }
-      .back-btn {
-        padding: 12px 20px;
-        font-size: 0.9rem;
-      }
+      body { padding: 30px 16px; }
+      header { font-size: 1.8rem; max-width: 100%; }
+      .btn { font-size: 1.1rem; padding: 16px 20px; }
+      .service-page { padding: 24px 20px; font-size: 1rem; }
+      .service-page h2 { font-size: 1.6rem; margin-bottom: 20px; }
+      a { font-size: 1rem; }
+      .back-btn { padding: 12px 20px; font-size: 0.9rem; }
     }
   </style>
 </head>
@@ -183,8 +155,12 @@
   <div class="container" id="main">
     <button class="btn" onclick="openService('youtube')">YouTube Premium</button>
     <button class="btn" onclick="openService('telegram')">Telegram Premium</button>
+    <button class="btn" onclick="openService('stars')">Telegram Stars</button>
+    <button class="btn" onclick="openService('tiktok')">TikTok Coins</button>
+    <button class="btn" onclick="openService('freefire')">Free Fire Diamond</button>
   </div>
 
+  <!-- YouTube -->
   <div class="service-page" id="youtube">
     <h2>YouTube Premium</h2>
     <ul>
@@ -200,10 +176,11 @@
       <li><strong>Single Pack:</strong> ২০৳</li>
       <li><strong>Family Pack:</strong> ৫০৳</li>
     </ul>
-    <a href="https://t.me/NeoEchoo" target="_blank" rel="noopener noreferrer">DM @NeoEchoo</a>
+    <a href="https://t.me/NeoEchoo" target="_blank">DM @NeoEchoo</a>
     <button class="back-btn" onclick="goBack()">← Back</button>
   </div>
 
+  <!-- Telegram Premium -->
   <div class="service-page" id="telegram">
     <h2>Telegram Premium</h2>
     <ul>
@@ -212,21 +189,69 @@
       <li>6 months: 17.5$</li>
       <li>12 months: 30.5$</li>
     </ul>
-    <a href="https://t.me/NeoEchoo" target="_blank" rel="noopener noreferrer">DM @NeoEchoo</a>
+    <a href="https://t.me/NeoEchoo" target="_blank">DM @NeoEchoo</a>
+    <button class="back-btn" onclick="goBack()">← Back</button>
+  </div>
+
+  <!-- Telegram Stars -->
+  <div class="service-page" id="stars">
+    <h2>Telegram Stars</h2>
+    <ul>
+      <li>50 Stars — 0.95$</li>
+      <li>75 Stars — 1.40$</li>
+      <li>100 Stars — 1.80$</li>
+      <li>2500 Stars — 40.00$</li>
+      <li>50000 Stars — 760.00$</li>
+    </ul>
+    <a href="https://t.me/NeoEchoo" target="_blank">DM @NeoEchoo</a>
+    <button class="back-btn" onclick="goBack()">← Back</button>
+  </div>
+
+  <!-- TikTok Coins -->
+  <div class="service-page" id="tiktok">
+    <h2>TikTok Coins</h2>
+    <ul>
+      <li>70 Coins — 1.00$</li>
+      <li>340 Coins — 4.00$</li>
+      <li>700 Coins — 8.00$</li>
+      <li>5000 Coins — 54.00$</li>
+      <li>10000 Coins — 106.00$</li>
+    </ul>
+    <p>🛑 Need ID Access</p>
+    <a href="https://t.me/NeoEchoo" target="_blank">DM @NeoEchoo</a>
+    <button class="back-btn" onclick="goBack()">← Back</button>
+  </div>
+
+  <!-- Free Fire Diamond -->
+  <div class="service-page" id="freefire">
+    <h2>Free Fire Diamond</h2>
+    <ul>
+      <li>25 Diamonds — 25৳</li>
+      <li>50 Diamonds — 40৳</li>
+      <li>115 Diamonds — 80৳</li>
+      <li>610 Diamonds — 400৳</li>
+      <li>2530 Diamonds — 1590৳</li>
+      <li>Weekly Lite — 45৳</li>
+      <li>Weekly — 160৳</li>
+      <li>Monthly — 780৳</li>
+    </ul>
+    <a href="https://t.me/NeoEchoo" target="_blank">DM @NeoEchoo</a>
     <button class="back-btn" onclick="goBack()">← Back</button>
   </div>
 
   <script>
     function openService(service) {
       document.getElementById("main").style.display = "none";
+      const pages = document.querySelectorAll(".service-page");
+      pages.forEach(p => p.style.display = "none");
       document.getElementById(service).style.display = "block";
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function goBack() {
       document.getElementById("main").style.display = "flex";
-      document.getElementById("youtube").style.display = "none";
-      document.getElementById("telegram").style.display = "none";
+      const pages = document.querySelectorAll(".service-page");
+      pages.forEach(p => p.style.display = "none");
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
